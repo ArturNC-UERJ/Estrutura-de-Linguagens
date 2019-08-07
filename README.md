@@ -1,2 +1,4 @@
-# EDL
-Repositório para a disciplina Estruturas de Linguagens 19.2
+Estruturas de Linguagens
+Artur Nascimento do Carmo
+===
+*4° Período de Ciência da Computação pela Universidade do Estado do Rio de Janeiro*

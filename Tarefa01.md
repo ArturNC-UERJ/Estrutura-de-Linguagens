@@ -73,6 +73,12 @@ _________________________________________________
 
 Para que não exista a necessidade de um coletor de lixo, o Rust utiliza o Ownership. A memória é gerenciada através de um sistema de propriedade com um conjunto de regras que o compilador verifica em tempo de  compilação. Nenhum dos recursos de propriedade desacelera o programa enquanto ele está em execução. Após a trasferência de recursos o "owner" anterior não tem mais controle sobre os dados passados. Com isso, é evitada a criação de ponteiros pendentes.
 
+Algumas regras em Ownership devem ser levadas em consideração: 
+
+- Cada valor de Rust possui uma variável que é a proprietária deste valor.
+- Só pode haver 1 proprietário por vez.
+- Quando o proprietário sair do escopo, o valor será descartado.
+
 * Borrowing: 
 
 O sistema de borrowing de Rust existe para que seja possível utilizar dados sem tomar posse sobre eles,

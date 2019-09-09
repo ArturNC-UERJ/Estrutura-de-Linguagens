@@ -62,29 +62,39 @@ _________________________________________________
 |![tipagem](https://user-images.githubusercontent.com/7257385/64494139-70573400-d25f-11e9-87f4-3bd781acd787.jpg) |![tipagem java](https://user-images.githubusercontent.com/7257385/64494500-1e64dd00-d264-11e9-9b06-2c6fc79b1e7b.jpg) |
 
 ### ***Código representativo***
-| Rust | Java |
-| --- | --- |
-|![trait 2](https://user-images.githubusercontent.com/7257385/64493361-9b3c8a80-d255-11e9-9dcc-c09743e50b7e.jpg)|![java interface](https://user-images.githubusercontent.com/7257385/64494517-671c9600-d264-11e9-8d84-0c8d63bfbc71.jpg)|
+## **Ownership**
+A memória em Rust pode ser alocada em Stack(pilha) ou na Heap.
+
+Stack - Segue a ordem de último a entrar e primeiro a sair (LIFO). O tamanho dos dados guardados são sabidos no tempo de compilação. Por exemplo: i32 vai para stack , o seu tamanho é conhecido no tempo de compiação. Assim como todos os tipos escalares de dados.
+Uma string é guardada no tempo de execução pois não se sabe o tamanho.
+
+Heap - Guarda os dados cujo tamanho não é conhecido no tempo de compilação. É usado para guardar dados dinâmicos. Basicamente é onde se guarda valores que podem mudar durante o tempo de vida do programa.
+
+Cada valor em Rust tem uma variável que é chamada de *owner* do valor. Todo tipo de dado guardado em Rust tem um *owner* associado. Por exemplo: let age = 30. Age é o *owner* do valor 30.
+- Cada dado só pode ter um *owner* de uma vez
+- Duas variáveis não podem apontar para o mesmo espaço de memória
+
+![owner](https://user-images.githubusercontent.com/7257385/64497780-46b20300-d287-11e9-8f38-7e9979636e39.jpg)
 
 
-### **Segurança de memória**
+O código acima apresenta um erro pois o valor de v foi passado para v2, logo não podemos acessá-lo novamente até este retomar seu *owner*
 
-** Ownership:**
-
-Para que não exista a necessidade de um coletor de lixo, o Rust utiliza o Ownership. A memória é gerenciada através de um sistema de propriedade com um conjunto de regras que o compilador verifica em tempo de  compilação. Nenhum dos recursos de propriedade desacelera o programa enquanto ele está em execução. Após a trasferência de recursos o "owner" anterior não tem mais controle sobre os dados passados. Com isso, é evitada a criação de ponteiros pendentes.
-
-Algumas regras em Ownership devem ser levadas em consideração: 
-
-- Cada valor de Rust possui uma variável que é a proprietária deste valor.
-- Só pode haver 1 proprietário por vez.
-- Quando o proprietário sair do escopo, o valor será descartado.
-
-** Borrowing:** 
-
-O sistema de borrowing de Rust existe para que seja possível utilizar dados sem tomar posse sobre eles,
+## **Borrowing**
+O sistems de borrowing de Rust existe para que seja possível utilizar dados sem tomar posse sobre eles,
 passando-os por referência é possível que se tenha uma ligação mas não o controle total de tal dado, resultando assim
 na maior segurança tendo em vista que um objeto emprestado para que exista o objeto que emprestou deve existir,
 caso contrário, teremos um erro.
+
+![Borrow 1](https://user-images.githubusercontent.com/7257385/64497377-f4231780-d283-11e9-88e8-0dd9a794d1ae.jpg)
+![Borrow 1 1](https://user-images.githubusercontent.com/7257385/64497378-f4bbae00-d283-11e9-85cb-e5c31a853c5c.jpg)
+
+## **Traits**
+Traits é muito parecido com o sistema de interfaces em java. Pode ser implementado em qualquer tipo de dado, inclusive dados já existentes como i64 (inteiro). Tipos diferentes de data podem compartilhar o mesmo comportamento se nós chamarmos o mesmo método para esses tipos.
+
+
+| Rust | Java |
+| --- | --- |
+|![trait 2](https://user-images.githubusercontent.com/7257385/64493361-9b3c8a80-d255-11e9-9dcc-c09743e50b7e.jpg)|![java interface](https://user-images.githubusercontent.com/7257385/64494517-671c9600-d264-11e9-8d84-0c8d63bfbc71.jpg)|
 
 
 ### ***Bibliografia***

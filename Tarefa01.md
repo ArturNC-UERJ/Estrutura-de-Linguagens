@@ -75,9 +75,9 @@ Para que não exista a necessidade de um coletor de lixo, o Rust utiliza o Owner
 
 Algumas regras em Ownership devem ser levadas em consideração: 
 
-- Cada valor de Rust possui uma variável que é a proprietária deste valor.
-- Só pode haver 1 proprietário por vez.
-- Quando o proprietário sair do escopo, o valor será descartado.
+1 - Cada valor de Rust possui uma variável que é a proprietária deste valor.
+2 - Só pode haver 1 proprietário por vez.
+3 - Quando o proprietário sair do escopo, o valor será descartado.
 
 * Borrowing: 
 

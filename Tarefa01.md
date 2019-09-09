@@ -67,6 +67,20 @@ _________________________________________________
 |![trait 2](https://user-images.githubusercontent.com/7257385/64493361-9b3c8a80-d255-11e9-9dcc-c09743e50b7e.jpg)|![java interface](https://user-images.githubusercontent.com/7257385/64494517-671c9600-d264-11e9-8d84-0c8d63bfbc71.jpg)|
 
 
+### **Segurança de memória**
+
+* Ownership:
+
+Para que não exista a necessidade de um coletor de lixo, o Rust utiliza o Ownership. A memória é gerenciada através de um sistema de propriedade com um conjunto de regras que o compilador verifica em tempo de  compilação. Nenhum dos recursos de propriedade desacelera o programa enquanto ele está em execução. Após a trasferência de recursos o "owner" anterior não tem mais controle sobre os dados passados. Com isso, é evitada a criação de ponteiros pendentes.
+
+* Borrowing: 
+
+O sistema de borrowing de Rust existe para que seja possível utilizar dados sem tomar posse sobre eles,
+passando-os por referência é possível que se tenha uma ligação mas não o controle total de tal dado, resultando assim
+na maior segurança tendo em vista que um objeto emprestado para que exista o objeto que emprestou deve existir,
+caso contrário, teremos um erro.
+
+
 ### ***Bibliografia***
 https://doc.rust-lang.org/book/
 
